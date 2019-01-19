@@ -11,23 +11,10 @@
 #=============================================================================
 # New configs
 #=============================================================================
-# Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 3 
-bindsym XF86MonBrightnessDown exec xbacklight -dec 3 
-
-# Sounds controls
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
-bindsym XF86AudioRaiseVolume exec pactl set-sink-mute 0 false && pactl set-sink-volume 0 +1%
-bindsym XF86AudioLowerVolume exec pactl set-sink-mute 0 false && pactl set-sink-volume 0 -1% 
-
 # Application shortcuts
 bindsym $mod+i exec firefox --open
-bindsym $mod+o exec thunar
-
-## Quick Terminal
-for_window [instance="quickterm"] move window to scratchpad
-bindsym $mod+t [instance="quickterm"] scratchpad show
-exec --no-startup-id urxvt -name "quickterm"
+bindsym Ctrl+Mod1+Delete exec dm-tool lock
+bindsym grave exec guake
 
 #Remaps the caps lock button to escape and uses the US international keyboard with dead keys
 exec_always --no-startup-id setxkbmap -option caps:escape
@@ -181,5 +168,5 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	position top
-        status_command i3status -c ~/.config/i3/i3status.conf	
+        status_command i3status -c ~/.config/i3/i3status.conf
 }
