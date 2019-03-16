@@ -14,10 +14,11 @@
 # Application shortcuts
 bindsym $mod+i exec firefox --open
 bindsym Ctrl+Mod1+Delete exec dm-tool lock
-bindsym grave exec guake
+bindsym $mod+grave exec guake
 
 #Remaps the caps lock button to escape and uses the US international keyboard with dead keys
 exec_always --no-startup-id setxkbmap -option caps:escape
+exec_always --no-startup-id nohup nm-applet &
 
 
 #=============================================================================
